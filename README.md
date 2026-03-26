@@ -78,11 +78,25 @@ tests/
 ### 📝 Pending TODOs
 
 <!-- auto-generated – do not edit manually -->
-<!-- last refreshed: initial scaffold (stale placeholder) -->
+<!-- last refreshed: 2026-03-26 | 17 items -->
 
-- `polaris/core.py` — add coordinate validation
-- `polaris/tracker.py` — load catalogue from CSV
-- `polaris/formatter.py` — honour datetime format
+- `polaris/core.py:22` — validate that ra is within [0, 360) and dec within [-90, 90]
+- `polaris/core.py:27` — switch to the Vincenty formula for antipodal-safe calculation
+- `polaris/core.py:43` — persist each record to SQLite for crash-safe storage
+- `polaris/core.py:50` — build a k-d tree index once the record count exceeds 1000
+- `polaris/core.py:54` — include min/max/mean magnitude in the summary when available
+- `polaris/tracker.py:26` — load catalogue from an external CSV file instead of hard-coding it
+- `polaris/tracker.py:31` — add a calibration offset (delta_ra, delta_dec) per session
+- `polaris/tracker.py:46` — emit a WARNING log when no match is found within the radius
+- `polaris/tracker.py:51` — parallelise with a thread pool for large batches (> 500 items)
+- `polaris/formatter.py:29` — escape newlines inside the 'notes' field before writing
+- `polaris/formatter.py:46` — honour a user-supplied datetime format for the timestamp field
+- `polaris/formatter.py:66` — add a configurable column-width parameter for terminal output
+- `polaris/config.py:35` — validate each key against its expected type before assigning
+- `polaris/config.py:42` — support POLARIS_EXTRA_* variables and merge them into cfg.extra
+- `polaris/config.py:57` — deep-merge the extra dicts instead of replacing entirely
+- `tests/test_core.py:50` — assert magnitude stats once summary() includes them
+- `tests/test_core.py:51` — assert observer name appears correctly in the output dict
 
 ---
 
