@@ -78,7 +78,7 @@ tests/
 ### 📝 Pending TODOs
 
 <!-- auto-generated – do not edit manually -->
-<!-- last refreshed: 2026-03-26 | 17 items -->
+<!-- last refreshed: 2026-03-27 | 17 items -->
 
 - `polaris/core.py:22` — validate that ra is within [0, 360) and dec within [-90, 90]
 - `polaris/core.py:27` — switch to the Vincenty formula for antipodal-safe calculation
